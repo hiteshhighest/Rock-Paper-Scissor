@@ -9,11 +9,11 @@ function choice(user) {
     let computerchoice;
     let result;
 
-    if (random <= 0.33) {
+    if (random <= 1/3) {
         computer = 1;
         computerchoice = "Rock";
     }
-    else if (random > 0.33 && random <= 0.66) {
+    else if (random > 1/3 && random <= 2/3) {
         computer = 2;
         computerchoice = "Paper";
     }
