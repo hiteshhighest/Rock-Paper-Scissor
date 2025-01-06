@@ -6,23 +6,33 @@
     </head>
     <body>
         <div class="main">
-            <button onclick="
-                choice(1)   
-            ">
-                <img src="rock.png" class="emoji">
-            </button>
-    
-            <button onclick="
-                choice(2)   
-            ">
-                <img src="paper.png" class="emoji">
-            </button>
-    
-            <button onclick="
-                choice(3)   
-            ">
-                <img src="scissors.png" class="emoji">
-            </button>
+            <div class="options">
+                <button onclick="
+                    choice(1)   
+                ">
+                    <img src="rock.png" class="emoji">
+                </button>
+        
+                <button onclick="
+                    choice(2)   
+                ">
+                    <img src="paper.png" class="emoji">
+                </button>
+        
+                <button onclick="
+                    choice(3)   
+                ">
+                    <img src="scissors.png" class="emoji">
+                </button>
+            </div>
+               
+            <p class="js-computerchoice"></p>
+
+            <div class="results">
+                <p class="js-wins"></p>
+                <p class="js-loss"></p>
+                <p class="js-ties"></p>
+            </div>
         </div>
 
         <script src="script.js"></script>
