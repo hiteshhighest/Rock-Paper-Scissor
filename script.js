@@ -1,6 +1,8 @@
-let win = 0;
-let loss = 0;
-let tie = 0;
+const score = JSON.parse(localStorage.getItem(`score`)) || {
+    win: 0,
+    loss: 0,
+    tie: 0
+};
 
 function choice(user) {
     const random = (Math.random());
@@ -60,22 +62,19 @@ function choice(user) {
     }
 
     if (result === "Win") {
-        win += 1
+        score.win += 1
     }
     else if (result === "Loss") {
-        loss += 1
+        score.loss += 1
     }
     else {
-        tie += 1
+        score.tie += 1
     }
 
-    let Total = win + loss + tie;
+    localStorage.setItem(`score`, JSON.stringify(score))
 
-    alert(`You picked: ${userchoice}, Computer picked: ${computerchoice}
-Result: ${result}
-
-Score:
-Win: ${win}, Losses: ${loss}, Tie: ${tie}
-
-Total games played: ${Total}`);
+    document.querySelector(`.js-computerchoice`).innerHTML = (`Computer picked: ${computerchoice}`);
+    document.querySelector(`.js-wins`).innerHTML = (`Wins: ${score.win}`);
+    document.querySelector(`.js-loss`).innerHTML = (`Loss: ${score.loss}`);
+    document.querySelector(`.js-ties`).innerHTML = (`Ties: ${score.tie}`);
 }
